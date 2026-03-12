@@ -11,12 +11,13 @@ public class Aspirante extends Persona {
     private String estadoProceso;
     private Date fechaRegistro;
     
-    // Relación: Aplica a 1..* Vacante
-    private List<Vacante> vacantes;
+    // Relaciones
+    private Vacante vacante;
+    private List<ProcesoSeleccion> procesos;
 
     public Aspirante() {
         super();
-        this.vacantes = new ArrayList<>();
+        this.procesos = new ArrayList<>();
     }
 
     public Aspirante(int id, String nombre, String telefono, String email, int documento, String cargoAplicado, String experiencia, String estadoProceso, Date fechaRegistro) {
@@ -26,7 +27,7 @@ public class Aspirante extends Persona {
         this.experiencia = experiencia;
         this.estadoProceso = estadoProceso;
         this.fechaRegistro = fechaRegistro;
-        this.vacantes = new ArrayList<>();
+        this.procesos = new ArrayList<>();
     }
 
     public int getDocumento() {
@@ -69,12 +70,20 @@ public class Aspirante extends Persona {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public List<Vacante> getVacantes() {
-        return vacantes;
+    public Vacante getVacante() {
+        return vacante;
     }
 
-    public void setVacantes(List<Vacante> vacantes) {
-        this.vacantes = vacantes;
+    public void setVacante(Vacante vacante) {
+        this.vacante = vacante;
+    }
+
+    public List<ProcesoSeleccion> getProcesos() {
+        return procesos;
+    }
+
+    public void setProcesos(List<ProcesoSeleccion> procesos) {
+        this.procesos = procesos;
     }
 
     @Override
@@ -88,3 +97,4 @@ public class Aspirante extends Persona {
                 "} " + super.toString();
     }
 }
+

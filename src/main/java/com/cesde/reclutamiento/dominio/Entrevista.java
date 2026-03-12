@@ -8,6 +8,10 @@ public class Entrevista {
     private String resultado;
     private String comentarios;
 
+    // Relaciones
+    private ProcesoSeleccion procesoSeleccion;
+    private Reclutador reclutador;
+
     public Entrevista() {
     }
 
@@ -50,6 +54,22 @@ public class Entrevista {
         this.comentarios = comentarios;
     }
 
+    public ProcesoSeleccion getProcesoSeleccion() {
+        return procesoSeleccion;
+    }
+
+    public void setProcesoSeleccion(ProcesoSeleccion procesoSeleccion) {
+        this.procesoSeleccion = procesoSeleccion;
+    }
+
+    public Reclutador getReclutador() {
+        return reclutador;
+    }
+
+    public void setReclutador(Reclutador reclutador) {
+        this.reclutador = reclutador;
+    }
+
     @Override
     public String toString() {
         return "Entrevista{" +
@@ -60,3 +80,4 @@ public class Entrevista {
                 '}';
     }
 }
+

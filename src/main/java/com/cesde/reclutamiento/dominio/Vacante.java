@@ -1,5 +1,8 @@
 package com.cesde.reclutamiento.dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vacante {
     private int idVacante;
     private String titulo;
@@ -7,7 +10,13 @@ public class Vacante {
     private double salario;
     private String estado;
 
+    // Relaciones
+    private List<Aspirante> aspirantes;
+    private List<ProcesoSeleccion> procesos;
+
     public Vacante() {
+        this.aspirantes = new ArrayList<>();
+        this.procesos = new ArrayList<>();
     }
 
     public Vacante(int idVacante, String titulo, String descripcion, double salario, String estado) {
@@ -16,6 +25,8 @@ public class Vacante {
         this.descripcion = descripcion;
         this.salario = salario;
         this.estado = estado;
+        this.aspirantes = new ArrayList<>();
+        this.procesos = new ArrayList<>();
     }
 
     public int getIdVacante() {
@@ -58,6 +69,22 @@ public class Vacante {
         this.estado = estado;
     }
 
+    public List<Aspirante> getAspirantes() {
+        return aspirantes;
+    }
+
+    public void setAspirantes(List<Aspirante> aspirantes) {
+        this.aspirantes = aspirantes;
+    }
+
+    public List<ProcesoSeleccion> getProcesos() {
+        return procesos;
+    }
+
+    public void setProcesos(List<ProcesoSeleccion> procesos) {
+        this.procesos = procesos;
+    }
+
     @Override
     public String toString() {
         return "Vacante{" +
@@ -69,3 +96,4 @@ public class Vacante {
                 '}';
     }
 }
+

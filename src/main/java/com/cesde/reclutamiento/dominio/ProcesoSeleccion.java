@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Representa un proceso de selección iniciado por un reclutador.
- */
 public class ProcesoSeleccion {
     private int idProceso;
     private Date fechaInicio;

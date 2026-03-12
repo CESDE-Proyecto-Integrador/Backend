@@ -1,8 +1,5 @@
 package com.cesde.reclutamiento.dominio;
 
-/**
- * Clase base que representa a una persona en el sistema de reclutamiento.
- */
 public abstract class Persona {
     private int id;
     private String nombre;

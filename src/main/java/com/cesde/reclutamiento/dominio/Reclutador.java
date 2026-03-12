@@ -3,21 +3,19 @@ package com.cesde.reclutamiento.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Representa a un reclutador que gestiona procesos de selección.
- * Hereda de Persona.
- */
 public class Reclutador extends Persona {
     private int idEmpleado;
     private String area;
     private String cargo;
     
-    // Relación: Gestiona 0..* ProcesoSelección
-    private List<ProcesoSeleccion> procesosGestionados;
+    // Relaciones
+    private List<ProcesoSeleccion> procesos;
+    private List<Entrevista> entrevistas;
 
     public Reclutador() {
         super();
-        this.procesosGestionados = new ArrayList<>();
+        this.procesos = new ArrayList<>();
+        this.entrevistas = new ArrayList<>();
     }
 
     public Reclutador(int id, String nombre, String telefono, String email, int idEmpleado, String area, String cargo) {
@@ -25,7 +23,8 @@ public class Reclutador extends Persona {
         this.idEmpleado = idEmpleado;
         this.area = area;
         this.cargo = cargo;
-        this.procesosGestionados = new ArrayList<>();
+        this.procesos = new ArrayList<>();
+        this.entrevistas = new ArrayList<>();
     }
 
     public int getIdEmpleado() {
@@ -52,12 +51,20 @@ public class Reclutador extends Persona {
         this.cargo = cargo;
     }
 
-    public List<ProcesoSeleccion> getProcesosGestionados() {
-        return procesosGestionados;
+    public List<ProcesoSeleccion> getProcesos() {
+        return procesos;
     }
 
-    public void setProcesosGestionados(List<ProcesoSeleccion> procesosGestionados) {
-        this.procesosGestionados = procesosGestionados;
+    public void setProcesos(List<ProcesoSeleccion> procesos) {
+        this.procesos = procesos;
+    }
+
+    public List<Entrevista> getEntrevistas() {
+        return entrevistas;
+    }
+
+    public void setEntrevistas(List<Entrevista> entrevistas) {
+        this.entrevistas = entrevistas;
     }
 
     @Override
@@ -69,3 +76,4 @@ public class Reclutador extends Persona {
                 "} " + super.toString();
     }
 }
+
